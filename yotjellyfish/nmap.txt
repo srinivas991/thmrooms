@@ -1,0 +1,43 @@
+# Nmap 7.91 scan initiated Tue Apr 27 12:02:46 2021 as: nmap -sV -sC -oN nmap.txt 54.155.40.177
+Nmap scan report for robyns-petshop.thm (54.155.40.177)
+Host is up (0.18s latency).
+Not shown: 994 filtered ports
+PORT     STATE SERVICE  VERSION
+21/tcp   open  ftp      vsftpd 3.0.3
+22/tcp   open  ssh      OpenSSH 5.9p1 Debian 5ubuntu1.4 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|_  2048 46:b2:81:be:e0:bc:a7:86:39:39:82:5b:bf:e5:65:58 (RSA)
+53/tcp   open  domain   (generic dns response: NOTIMP)
+80/tcp   open  http     Apache httpd 2.4.29
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Did not follow redirect to https://robyns-petshop.thm/
+443/tcp  open  ssl/http Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Robyn&#039;s Pet Shop
+| ssl-cert: Subject: commonName=robyns-petshop.thm/organizationName=Robyns Petshop/stateOrProvinceName=South West/countryName=GB
+| Subject Alternative Name: DNS:robyns-petshop.thm, DNS:monitorr.robyns-petshop.thm, DNS:beta.robyns-petshop.thm, DNS:dev.robyns-petshop.thm
+| Not valid before: 2021-04-27T06:30:10
+|_Not valid after:  2022-04-27T06:30:10
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn: 
+|_  http/1.1
+8000/tcp open  http-alt
+| fingerprint-strings: 
+|   GenericLines: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Length: 15
+|_    Request
+|_http-title: Under Development!
+|_http-trane-info: Problem with XML parsing of /evox/about
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port53-TCP:V=7.91%I=7%D=4/27%Time=6087B027%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,E,"\0\x0c\0\x06\x81\x84\0\0\0\0\0\0\0\0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8000-TCP:V=7.91%I=7%D=4/27%Time=6087B028%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,3F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Length:\x2
+SF:015\r\n\r\n400\x20Bad\x20Request");
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Apr 27 12:03:28 2021 -- 1 IP address (1 host up) scanned in 41.34 seconds

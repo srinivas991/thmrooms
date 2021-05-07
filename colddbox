@@ -1,0 +1,12 @@
+
+browse to this 10.10.21.3/wp-content/themes/twentyfifteen/404.php
+
+running linpeas now
+
+/var/www/html/wp-config.php
+
+got the database password from the above file, but not much ise of that one
+
+
+/usr/bin/find => has setuid
+

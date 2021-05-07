@@ -1,0 +1,28 @@
+└──╼ $~/Tools/ffuf -u http://10.10.36.255/FUZZ -ac -w /home/srini/Tools/SecLists/Discovery/Web-Content/common.txt
+
+        /'___\  /'___\           /'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.0
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.36.255/FUZZ
+ :: Wordlist         : FUZZ: /home/srini/Tools/SecLists/Discovery/Web-Content/common.txt
+ :: Follow redirects : false
+ :: Calibration      : true
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+ :: Filter           : Response size: 234
+ :: Filter           : Response words: 16
+ :: Filter           : Response lines: 10
+________________________________________________
+
+backups                 [Status: 301, Size: 236, Words: 14, Lines: 8]
+index.html              [Status: 200, Size: 1770, Words: 443, Lines: 37]
+:: Progress: [4685/4685] :: Job [1/1] :: 78 req/sec :: Duration: [0:01:00] :: Errors: 0 ::

