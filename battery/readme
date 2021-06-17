@@ -1,4 +1,0 @@
-export IP=10.10.46.53
-
-nmap -sV -sC $IP
-
